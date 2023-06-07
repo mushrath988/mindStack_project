@@ -1,0 +1,8 @@
+package com.te.mindstack.dto;
+
+public class UserUpdateDto {
+		
+	private int userAge;
+	private String userDOB;
+	private String userGender;
+}

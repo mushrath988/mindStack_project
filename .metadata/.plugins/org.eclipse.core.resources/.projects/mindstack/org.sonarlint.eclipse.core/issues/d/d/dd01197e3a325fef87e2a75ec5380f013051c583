@@ -1,0 +1,10 @@
+
+e
+java:S1611"2Remove the parentheses around the "role" parameter(¿¨äğ8Ë«†‰1HˆRMINORZ
+CODE_SMELL
+…
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¿¨äğ8Ë«†‰1H‡RMAJORZ
+CODE_SMELL
+›
+java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "authorities".(óÚğÿÿÿÿÿ8Ë«†‰1H„RMINORZ
+CODE_SMELL

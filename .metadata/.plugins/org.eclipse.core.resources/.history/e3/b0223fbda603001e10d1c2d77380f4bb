@@ -1,0 +1,20 @@
+package com.te.mindstack.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.te.mindstack.dto.UserLoginDto;
+import com.te.mindstack.response.AppResponse;
+
+@RestController
+public class LoginController {
+	
+	@PostMapping("/Login") 
+	public ResponseEntity<AppResponse> login(@RequestBody UserLoginDto userLoginDto) {
+		
+		
+		return null;
+	}
+}

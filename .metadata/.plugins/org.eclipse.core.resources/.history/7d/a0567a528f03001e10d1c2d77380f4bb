@@ -1,0 +1,16 @@
+package com.te.mindstack.service;
+
+import com.te.mindstack.dto.UserDto;
+import com.te.mindstack.dto.UserLoginDto;
+import com.te.mindstack.dto.UserUpdateDto;
+import com.te.mindstack.response.AppResponse;
+
+public interface UserService {
+
+	UserDto register(UserDto userDto);
+
+	UserUpdateDto updateUser(Integer userId, UserUpdateDto userUpdateDto);
+
+	UserLoginDto userLogin(UserLoginDto userLoginDto);
+
+}

@@ -1,0 +1,9 @@
+
+l	java:S125D"<This block of commented-out lines of code should be removed.(½’Í”ÿÿÿÿÿH»RMAJORZ
+CODE_SMELL
+c
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8İµŒ‰1HËRMINORZ
+CODE_SMELL
+d
+java:S1602.",Remove useless curly braces around statement(ê†˜úûÿÿÿÿ8³£—‰1H²RMINORZ
+CODE_SMELL

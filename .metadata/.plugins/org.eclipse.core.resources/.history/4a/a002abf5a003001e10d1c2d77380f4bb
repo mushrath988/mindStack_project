@@ -1,0 +1,5 @@
+package com.te.mindstack.config;
+
+public class CustomUserDetails {
+
+}

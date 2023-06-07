@@ -1,0 +1,16 @@
+//package com.te.mindstack.config;
+//
+//import java.util.Collection;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
+//
+//import com.te.mindstack.entity.Role;
+//import com.te.mindstack.entity.User;
+//import com.te.mindstack.repository.UserRepository;
+//
+//public class CustomUserDetails implements UserDetails {
+//
+//}

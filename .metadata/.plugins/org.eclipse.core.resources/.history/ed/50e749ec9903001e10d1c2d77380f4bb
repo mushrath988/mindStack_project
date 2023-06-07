@@ -1,0 +1,9 @@
+package com.te.mindstack.serviceimpl;
+
+import org.springframework.stereotype.Service;
+
+import com.te.mindstack.service.RoleService;
+@Service
+public class RoleServiceImpl implements RoleService{
+
+}

@@ -1,0 +1,5 @@
+package com.te.mindstack.dto;
+
+public class UserLoginDto {
+
+}

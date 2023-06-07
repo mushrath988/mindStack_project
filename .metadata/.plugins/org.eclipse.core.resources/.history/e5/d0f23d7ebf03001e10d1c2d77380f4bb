@@ -1,0 +1,63 @@
+package com.te.mindstack.serviceimpl;
+
+import java.util.Optional;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.te.mindstack.dto.UserDto;
+import com.te.mindstack.dto.UserLoginDto;
+import com.te.mindstack.dto.UserUpdateDto;
+import com.te.mindstack.entity.User;
+import com.te.mindstack.exception.UserNotFoundException;
+import com.te.mindstack.repository.RoleRepository;
+import com.te.mindstack.repository.UserRepository;
+import com.te.mindstack.service.UserService;
+
+@Service
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private UserRepository userRepository;
+	@Autowired
+	private RoleRepository roleRepository;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Override
+	public UserDto register(UserDto userDto) {
+		User user = new User();
+		BeanUtils.copyProperties(userDto, user);
+		user.setUserPassword(this.passwordEncoder.encode(userDto.getUserPassword()));
+		
+		userRepository.save(user);
+		return userDto;
+	}
+
+	@Override
+	public UserUpdateDto updateUser(Integer userId, UserUpdateDto userUpdateDto) {
+		Optional<User> user = userRepository.findById(userId);
+		if (user.isPresent()) {
+			User users = user.get();
+			BeanUtils.copyProperties(userUpdateDto, users);
+			userRepository.save(users);
+			return userUpdateDto;
+		} else {
+			throw new UserNotFoundException("user is not found");
+		}
+	}
+
+//	@Override
+//	public UserLoginDto userLogin(UserLoginDto userLoginDto) {
+//		String email = userLoginDto.getUserEmail();
+//		String password = userLoginDto.getUserPassword();
+//		User user = userRepository.findByEmail(email);
+//		if (user == null || !user.getUserPassword().equals(password))
+//
+//			return userLoginDto;
+//
+//		return null;
+//
+//	}
+}

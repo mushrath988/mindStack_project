@@ -1,0 +1,5 @@
+package com.te.mindstack.service;
+
+public class LoginService {
+
+}

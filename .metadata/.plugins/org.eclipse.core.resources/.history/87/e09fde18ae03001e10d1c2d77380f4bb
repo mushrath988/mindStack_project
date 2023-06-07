@@ -1,0 +1,27 @@
+package com.te.mindstack.serviceimpl;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.te.mindstack.dto.RoleDto;
+import com.te.mindstack.entity.Role;
+import com.te.mindstack.repository.RoleRepository;
+import com.te.mindstack.service.RoleService;
+
+@Service
+public class RoleServiceImpl implements RoleService {
+	@Autowired
+	private RoleRepository roleRepository;
+
+	@Override
+	public RoleDto createRole(RoleDto roleDto) {
+		Role role = new Role();
+		BeanUtils.copyProperties(roleDto, role);
+		Role roles = roleRepository.findById(roleDto.getUserId()).get();
+		role.setRoleId(roles.getRoleId());
+		roleRepository.save(role);
+		return roleDto;
+	}
+
+}
